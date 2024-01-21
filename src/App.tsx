@@ -1,5 +1,6 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import "./App.css";
+import { ColordMessage } from "./components/ColordMessage";
 
 function App() {
   // 入力フォームの中身をState管理する
@@ -19,6 +20,11 @@ function App() {
     setText("");
   };
 
+  const contentPinkStyle = {
+    color: "pink",
+    fontSize: "20px",
+  };
+
   return (
     <div className="App">
       <h1>簡単メモアプリ</h1>
@@ -34,6 +40,8 @@ function App() {
       </ul>
       <h2>メモの件数</h2>
       <p>{num}</p>
+      <p style={contentPinkStyle}>元気です！</p>
+      <ColordMessage color="blue" message="お元気ですか？" />
     </div>
   );
 }
